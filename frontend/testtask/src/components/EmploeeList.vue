@@ -24,6 +24,7 @@
         </tr>
       </tbody>
     </table>
+    <button id="btnAdd" @click="addEmploee">Добавить сотрудника</button>
     
     <ModalEmploee
       v-if="showEditModal" 
@@ -66,6 +67,10 @@ export default {
     };
   },
   methods: {
+    addEmploee(){
+        this.selectedEmployee = {};
+        this.showEditModal = true;
+    },
     openEditModal(employee) {
       this.selectedEmployee = { ...employee };
       this.showEditModal = true;
@@ -82,6 +87,8 @@ export default {
         
         this.employees[index] = updatedEmployee;
 
+      }else{
+        this.employees.push(updatedEmployee);
       }
       this.closeEditModal();
     }

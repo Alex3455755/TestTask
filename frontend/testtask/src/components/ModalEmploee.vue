@@ -1,11 +1,11 @@
 <template>
-  <div class="modal-overlay" @click.self="emitClose">
+  <div class="modal-overlay">
     <div class="modal-content" @click.stop>
       <h3>Редактировать сотрудника</h3>
       
       <form @submit.prevent="saveEmployee">
-
         <input type="hidden" v-model="formData.id">
+        
         <div class="form-group">
           <label>Имя:</label>
           <input v-model="formData.firstName" required />
@@ -39,6 +39,7 @@
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -120,23 +121,8 @@ export default {
   margin-top: 1.5rem;
 }
 
-
-.modal-actions button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-
-.modal-actions button[type="button"] {
-  background: #6c757d;
-  color: white;
-}
-
-
 .modal-actions button[type="submit"] {
-  background: #28a745;
+  background: #6c757d;
   color: white;
 }
 </style>
